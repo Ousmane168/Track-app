@@ -1,0 +1,100 @@
+Project Setup Guide
+This guide provides step-by-step instructions for setting up and running the project on both Windows and macOS.
+Prerequisites
+Ensure you have the following installed on your system:
+
+Node.js (LTS version recommended)
+npm (comes with Node.js)
+MySQL (or your preferred database system)
+Git (optional, for version control)
+
+Setup Steps
+1. Clone the Repository
+If using Git:
+ git clone [your-repository-url]
+cd [your-project-name]
+If not using Git, download the project zip file and extract it to your preferred location.
+2. Backend Setup
+
+Navigate to the backend directory:
+cd [backend-directory-name]
+
+Install dependencies:
+ npm install
+
+Set up environment variables:
+
+Create a .env file in the backend root directory
+Add the following variables (adjust as needed):
+CopyPORT=3000
+DB_HOST=localhost
+DB_USER=your_database_user
+DB_PASS=your_database_password
+DB_NAME=your_database_name
+JWT_SECRET=your_jwt_secret_key
+
+
+
+Set up the database:
+
+Create a new MySQL database
+Run the SQL scripts provided in the project to create necessary tables
+
+
+Start the backend server:
+npm start
+
+
+3. Frontend Setup
+
+Open a new terminal and navigate to the frontend directory:
+cd [frontend-directory-name]
+
+Install dependencies:
+npm install
+
+Set up environment variables (if needed):
+
+Create a .env file in the frontend root directory
+Add any necessary frontend environment variables, e.g.:
+REACT_APP_API_URL=http://localhost:3000/api
+
+
+
+Start the frontend development server:
+npm start
+
+
+Running the Project
+
+Ensure the backend server is running (you should see a message like "Server running on port 3000")
+Ensure the frontend development server is running (typically on http://localhost:3000)
+Open a web browser and navigate to http://localhost:3000 (or the port specified by your React app)
+
+
+Troubleshooting
+Windows-specific Issues
+
+If you encounter EACCES errors, try running the command prompt or PowerShell as administrator.
+Ensure that MySQL service is running. You can start it from the Services application.
+
+macOS-specific Issues
+
+If you encounter permission issues, ensure that you have the necessary rights to access the project directories.
+For MySQL issues, you might need to start the MySQL server using:
+Copysudo mysqld_safe
+
+
+General Issues
+
+"Module not found" errors: Ensure all dependencies are installed by running npm install in both backend and frontend directories.
+Database connection issues: Check your .env file and ensure all database credentials are correct.
+JWT errors: Make sure your JWT_SECRET is set correctly in the backend .env file.
+
+Additional Notes
+
+Always ensure your backend server is running before starting the frontend.
+For production deployment, additional steps like setting up a production database, configuring a web server (e.g., Nginx), and setting up SSL might be necessary.
+Regularly update your dependencies to ensure you have the latest security patches.
+
+If you encounter any issues not covered in this guide, please refer to the project's documentation or seek assistance from the project maintainers.

@@ -1,0 +1,63 @@
+# Installation Commands for Node.js, npm, and MySQL
+
+## Windows
+
+### Node.js and npm
+1. Download the Windows Installer from the [official Node.js website](https://nodejs.org/).
+2. Run the installer (the .msi file you downloaded in the previous step.)
+3. Follow the prompts in the installer.
+4. Restart your computer.
+
+To verify the installation, open Command Prompt and run:
+```
+node --version
+npm --version
+```
+
+### MySQL
+1. Download MySQL Installer from the [official MySQL website](https://dev.mysql.com/downloads/installer/).
+2. Run the installer and follow the installation wizard.
+3. During installation, make sure to select "Server only" or "Custom" to install MySQL Server.
+4. Set a root password when prompted.
+
+To start MySQL from the command line:
+```
+net start mysql
+```
+
+## macOS
+
+### Node.js and npm
+Using Homebrew (recommended):
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install node
+```
+
+To verify the installation:
+```
+node --version
+npm --version
+```
+
+### MySQL
+Using Homebrew:
+```
+brew install mysql
+```
+
+Start MySQL service:
+```
+brew services start mysql
+```
+
+Set MySQL root password:
+```
+mysql_secure_installation
+```
+
+## Additional Notes
+
+- For both Windows and macOS, npm is included with Node.js installation.
+- These commands assume you're using the latest versions. If you need a specific version, you may need to modify the commands or download a specific installer.
+- For MySQL on macOS, you can also download the DMG archive from the official MySQL website if you prefer not to use Homebrew.
